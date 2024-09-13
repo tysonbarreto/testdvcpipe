@@ -1,0 +1,21 @@
+stages:
+  # filter:
+  #   cmd: python ./filter.py
+  #   deps:
+  #   - ./filter.py
+  #   - ./weather-data/2006-04-10.csv
+  #   params:
+  #   - filter.value
+  #   outs:
+  #   - ./output/filter
+
+  training:
+    cmd: python ./training.py ./output/filter
+    deps:
+    - ./training.py
+    - ./weather-data/2006-04-10.csv
+    - ./output/filter
+    params:
+    - training.num_rows
+    outs:
+    - ./output/training
