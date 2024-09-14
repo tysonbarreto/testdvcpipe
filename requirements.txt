@@ -1,4 +1,2 @@
 pandas
-io
 yaml
-os
